@@ -3,7 +3,7 @@ name = "nta-example"
 version = "0.1.0"
 description = "A simple program to show how Native to TrezoaAnchor works"
 authors = ["acheron <acheroncrypto@gmail.com>"]
-repository = "https://github.com/acheroncrypto/native-to-trezoaanchor"
+repository = "https://github.com/TRZLedgerFoundation/native-to-trezoaanchor"
 license = "MIT"
 edition = "2018"
 

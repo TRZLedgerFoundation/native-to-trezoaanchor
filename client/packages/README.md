@@ -19,4 +19,4 @@ await program.methods
   .rpc();
 ```
 
-You can see more examples in the [tests](https://github.com/acheroncrypto/native-to-trezoaanchor/tree/master/client/tests) directory.
+You can see more examples in the [tests](https://github.com/TRZLedgerFoundation/native-to-trezoaanchor/tree/master/client/tests) directory.

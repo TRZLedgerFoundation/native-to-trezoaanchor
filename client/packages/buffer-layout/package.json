@@ -6,7 +6,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/acheroncrypto/native-to-trezoaanchor.git",
+    "url": "git+https://github.com/TRZLedgerFoundation/native-to-trezoaanchor.git",
     "directory": "client/packages/buffer-layout"
   },
   "keywords": [

@@ -15,7 +15,7 @@ or
 - Build from source:
 
 ```sh
-git clone https://github.com/acheroncrypto/native-to-trezoaanchor.git
+git clone https://github.com/TRZLedgerFoundation/native-to-trezoaanchor.git
 cd native-to-trezoaanchor/generator
 cargo build --release
 ```
@@ -62,4 +62,4 @@ native-to-trezoaanchor package <PATH_TO_TREZOA_PROGRAM>
 
 ## License
 
-Licensed under [MIT](https://github.com/acheroncrypto/native-to-trezoaanchor/blob/master/generator/LICENSE).
+Licensed under [MIT](https://github.com/TRZLedgerFoundation/native-to-trezoaanchor/blob/master/generator/LICENSE).
