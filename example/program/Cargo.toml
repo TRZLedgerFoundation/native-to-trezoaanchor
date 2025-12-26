@@ -1,9 +1,9 @@
 [package]
 name = "nta-example"
 version = "0.1.0"
-description = "A simple program to show how Native to Anchor works"
+description = "A simple program to show how Native to TrezoaAnchor works"
 authors = ["acheron <acheroncrypto@gmail.com>"]
-repository = "https://github.com/acheroncrypto/native-to-anchor"
+repository = "https://github.com/acheroncrypto/native-to-trezoaanchor"
 license = "MIT"
 edition = "2018"
 
@@ -14,6 +14,6 @@ no-entrypoint = []
 crate-type = ["cdylib", "lib"]
 
 [dependencies]
-solana-program = "1.10.35"
+trezoa-program = "1.10.35"
 borsh = "*"
 thiserror = "*"

@@ -1,5 +1,5 @@
-import { PublicKey } from "@solana/web3.js";
-import { Program, AnchorProvider } from "@project-serum/anchor";
+import { PublicKey } from "@trezoa/web3.js";
+import { Program, TrezoaAnchorProvider } from "@trezoa-serum/trezoaanchor";
 
 import { SolendProgramCoder } from "./coder";
 
@@ -9,7 +9,7 @@ export const SOLEND_PROGRAM_PROGRAM_ID = new PublicKey(
 
 interface GetProgramParams {
   programId?: PublicKey;
-  provider?: AnchorProvider;
+  provider?: TrezoaAnchorProvider;
 }
 
 export function solendProgramProgram(

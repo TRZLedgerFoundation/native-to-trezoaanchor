@@ -1,13 +1,13 @@
 ## Client generation example
 
-This example will demonstrate how we can generate an Anchor Client for a Native program and use it in Javascript.
+This example will demonstrate how we can generate an TrezoaAnchor Client for a Native program and use it in Javascript.
 
 ### Requirements
 
 - Rust
-- Solana
+- Trezoa
 - Yarn or NPM
-- Native to Anchor
+- Native to TrezoaAnchor
 
 Make sure you've installed the required programs before continuing with the tutorial.
 
@@ -24,14 +24,14 @@ Let's build and deploy the program:
 cargo build-bpf
 
 # get the program id
-solana address -k target/deploy/nta_example-keypair.json
+trezoa address -k target/deploy/nta_example-keypair.json
 
 # change the program id in src/lib.rs with the output program id
 
 # re-build
 cargo build-bpf
 # deploy with the output command
-# solana program deploy ...
+# trezoa program deploy ...
 ```
 
 Now that the program is deployed on-chain we can test it!
@@ -42,7 +42,7 @@ Run:
 
 ```sh
 # in the program directory
-native-to-anchor package .
+native-to-trezoaanchor package .
 ```
 
 `.` here is the path to the program that we are generating from. Since we are in the program folder it's `.`. This will generate a folder called `generated` in our current directory, install dependencies and build the package we can import to our project.
@@ -51,7 +51,7 @@ You can choose to import this package to your project with the output command bu
 
 ```sh
 # `-o` specifies the output directory for the generated package
-native-to-anchor package . -o ../../client/packages/
+native-to-trezoaanchor package . -o ../../client/packages/
 ```
 
 **TIP:** You can add `-y` flag to the `package` command to use a prebuilt lock file for faster initialization.
@@ -63,7 +63,7 @@ That's it, we can now test our program!
 In `client/tests/src/example/nta-example.ts` we have a boilerplate testing code ready for us. Let's import the generated package.
 
 ```ts
-import { ntaExampleProgram } from "@native-to-anchor/nta-example";
+import { ntaExampleProgram } from "@native-to-trezoaanchor/nta-example";
 ```
 
 We can now get the program and setup tests:
@@ -136,7 +136,7 @@ async function initializeAccount() {
 }
 ```
 
-You should get typescript autocomplete support when writing this function just like you would an Anchor program! We are creating the account in `preInstructions` and sending both instructions together.
+You should get typescript autocomplete support when writing this function just like you would an TrezoaAnchor program! We are creating the account in `preInstructions` and sending both instructions together.
 
 Let's check if the account was created correctly:
 
@@ -155,9 +155,9 @@ Full code:
 
 ```ts
 import assert from "assert";
-import { ntaExampleProgram } from "@native-to-anchor/nta-example";
-import { BN } from "@project-serum/anchor";
-import { Keypair, PublicKey } from "@solana/web3.js";
+import { ntaExampleProgram } from "@native-to-trezoaanchor/nta-example";
+import { BN } from "@trezoa-serum/trezoaanchor";
+import { Keypair, PublicKey } from "@trezoa/web3.js";
 
 import { getProvider, loadKp, test, confirmTx } from "../utils";
 

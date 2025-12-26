@@ -1,5 +1,5 @@
 {
-  "name": "@native-to-anchor/tests",
+  "name": "@native-to-trezoaanchor/tests",
   "version": "0.1.0",
   "private": true,
   "main": "index.js",
@@ -13,7 +13,7 @@
     "typescript": "*"
   },
   "dependencies": {
-    "@project-serum/anchor": "*",
-    "@solana/web3.js": "*"
+    "@trezoa-serum/trezoaanchor": "*",
+    "@trezoa/web3.js": "*"
   }
 }

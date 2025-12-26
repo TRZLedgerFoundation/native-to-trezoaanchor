@@ -1,5 +1,5 @@
-import { Idl, Event, EventCoder } from "@project-serum/anchor";
-import { IdlEvent } from "@project-serum/anchor/dist/cjs/idl";
+import { Idl, Event, EventCoder } from "@trezoa-serum/trezoaanchor";
+import { IdlEvent } from "@trezoa-serum/trezoaanchor/dist/cjs/idl";
 
 export class SolendProgramEventsCoder implements EventCoder {
   constructor(_idl: Idl) {}

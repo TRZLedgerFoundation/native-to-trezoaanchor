@@ -1,4 +1,4 @@
-import { Idl, Coder } from "@project-serum/anchor";
+import { Idl, Coder } from "@trezoa-serum/trezoaanchor";
 
 import { MplTokenMetadataAccountsCoder } from "./accounts";
 import { MplTokenMetadataEventsCoder } from "./events";

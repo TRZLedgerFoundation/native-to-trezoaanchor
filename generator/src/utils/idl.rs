@@ -1,4 +1,4 @@
-use anchor_syn::idl::IdlType;
+use trezoaanchor_syn::idl::IdlType;
 use colored::Colorize;
 use log::info;
 
@@ -34,7 +34,7 @@ pub fn convert_account_name(name_uncut: impl AsRef<str>) -> String {
 
     account_name = if account_name.contains("system_program") {
         "system_program"
-    } else if account_name.contains("token_program") || account_name.contains("spl_token") {
+    } else if account_name.contains("token_program") || account_name.contains("tpl_token") {
         "token_program"
     } else if account_name.contains("bpf_loader_upgradeable") {
         "bpf_loader_upgradeable"

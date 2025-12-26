@@ -28,41 +28,41 @@ struct Cli {
 
 #[derive(Subcommand)]
 pub enum Commands {
-    /// Generate Anchor dummy program
+    /// Generate TrezoaAnchor dummy program
     Program(ProgramArgs),
 
-    /// Generate Anchor IDL
+    /// Generate TrezoaAnchor IDL
     Idl(IdlArgs),
 
-    /// Generate Anchor client as an importable JS package
+    /// Generate TrezoaAnchor client as an importable JS package
     Package(PackageArgs),
 }
 
 #[derive(Args)]
 pub struct ProgramArgs {
-    /// Path of the directory that contains Solana program(s)
+    /// Path of the directory that contains Trezoa program(s)
     #[clap(value_parser)]
     pub path: Option<PathBuf>,
 }
 
 #[derive(Args)]
 pub struct IdlArgs {
-    /// Path of the directory that contains Solana program(s)
+    /// Path of the directory that contains Trezoa program(s)
     #[clap(value_parser)]
     pub path: Option<PathBuf>,
 
-    /// Keep generated Anchor dummy program after generating the IDL
+    /// Keep generated TrezoaAnchor dummy program after generating the IDL
     #[clap(short, long, action)]
     pub keep_dummy_program: bool,
 
-    /// Path of existing Anchor dummy program file(lib.rs)
+    /// Path of existing TrezoaAnchor dummy program file(lib.rs)
     #[clap(short, long, value_parser)]
     pub dummy_program_path: Option<PathBuf>,
 }
 
 #[derive(Args)]
 pub struct PackageArgs {
-    /// Path of the directory that contains Solana program(s)
+    /// Path of the directory that contains Trezoa program(s)
     #[clap(value_parser)]
     pub path: Option<PathBuf>,
 
@@ -70,7 +70,7 @@ pub struct PackageArgs {
     #[clap(short, long, action)]
     pub keep: bool,
 
-    /// Keep generated Anchor dummy program after generating the IDL
+    /// Keep generated TrezoaAnchor dummy program after generating the IDL
     #[clap(long, action)]
     pub keep_dummy_program: bool,
 
@@ -86,11 +86,11 @@ pub struct PackageArgs {
     #[clap(short, long, action)]
     pub yarn_lock: bool,
 
-    /// Path of existing Anchor dummy program file(lib.rs)
+    /// Path of existing TrezoaAnchor dummy program file(lib.rs)
     #[clap(short, long, value_parser)]
     pub dummy_program_path: Option<PathBuf>,
 
-    /// Path of existing Anchor IDL file(JSON)
+    /// Path of existing TrezoaAnchor IDL file(JSON)
     #[clap(short, long, value_parser)]
     pub idl_path: Option<PathBuf>,
 }

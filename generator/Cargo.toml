@@ -1,10 +1,10 @@
 [package]
-name = "native-to-anchor"
-description = "Generate Anchor IDLs and clients from native Solana programs"
+name = "native-to-trezoaanchor"
+description = "Generate TrezoaAnchor IDLs and clients from native Trezoa programs"
 version = "0.1.0"
 authors = ["acheron <acheroncrypto@gmail.com>"]
-repository = "https://github.com/acheroncrypto/native-to-anchor"
-documentation = "https://github.com/acheroncrypto/native-to-anchor/blob/master/README.md"
+repository = "https://github.com/acheroncrypto/native-to-trezoaanchor"
+documentation = "https://github.com/acheroncrypto/native-to-trezoaanchor/blob/master/README.md"
 license = "MIT"
 edition = "2021"
 include = [
@@ -12,10 +12,10 @@ include = [
     "Cargo.toml",
     "Cargo.lock"
 ]
-keywords = ["native-to-anchor", "solana", "anchor", "anchor-client", "nta"]
+keywords = ["native-to-trezoaanchor", "trezoa", "trezoaanchor", "trezoaanchor-client", "nta"]
 
 [dependencies]
-anchor-syn = { version = "0.25.0", features = ["idl"] }
+trezoaanchor-syn = { version = "0.25.0", features = ["idl"] }
 clap = { version = "3.2.16", features = ["derive"] }
 colored = "2.0.0"
 log = "0.4.17"
@@ -25,5 +25,5 @@ serde_json = "1.0.81"
 toml = "0.5.9"
 
 [[bin]]
-name = "native-to-anchor"
+name = "native-to-trezoaanchor"
 path = "src/main.rs"

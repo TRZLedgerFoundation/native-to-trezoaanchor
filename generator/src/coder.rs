@@ -3,7 +3,7 @@ use std::{
     path::{Path, PathBuf},
 };
 
-use anchor_syn::idl::{Idl, IdlTypeDefinitionTy};
+use trezoaanchor_syn::idl::{Idl, IdlTypeDefinitionTy};
 use colored::Colorize;
 use log::info;
 use serde_json::to_string_pretty;
@@ -83,7 +83,7 @@ impl<'a> CoderGenerator<'a> {
 
     pub fn run(self) -> GeneratorResult {
         info(format!(
-            "Creating Anchor Coder for {}...",
+            "Creating TrezoaAnchor Coder for {}...",
             self.program_info.name
         ));
 
@@ -412,7 +412,7 @@ impl<'a> CoderGenerator<'a> {
         let package_dir = src_dir.parent().unwrap().canonicalize().unwrap();
 
         // Create package.json
-        let package_name = format!("@native-to-anchor/{}", self.program_info.name);
+        let package_name = format!("@native-to-trezoaanchor/{}", self.program_info.name);
         let package_json_path = package_dir.join(package::PACKAGE_JSON_FILENAME);
         let package_json_content = package::PACKAGE_JSON_CONTENT
             .replace("<Name>", &package_name)

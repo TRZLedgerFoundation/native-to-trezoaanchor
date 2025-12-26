@@ -1,14 +1,14 @@
 ### Packages
 
-You can import these native Solana programs to your JS project and use it like any other [Anchor](https://anchor-lang.com) program.
+You can import these native Trezoa programs to your JS project and use it like any other [TrezoaAnchor](https://trezoaanchor-lang.com) program.
 
 **Example:**
 
 ```ts
-import { splTokenProgram } from "@native-to-anchor/spl-token";
-import { BN } from "@project-serum/anchor";
+import { tplTokenProgram } from "@native-to-trezoaanchor/tpl-token";
+import { BN } from "@trezoa-serum/trezoaanchor";
 
-const program = splTokenProgram();
+const program = tplTokenProgram();
 await program.methods
   .transfer(new BN(<TransferAmount>))
   .accounts({
@@ -19,4 +19,4 @@ await program.methods
   .rpc();
 ```
 
-You can see more examples in the [tests](https://github.com/acheroncrypto/native-to-anchor/tree/master/client/tests) directory.
+You can see more examples in the [tests](https://github.com/acheroncrypto/native-to-trezoaanchor/tree/master/client/tests) directory.

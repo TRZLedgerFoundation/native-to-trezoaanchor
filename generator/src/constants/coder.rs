@@ -2,9 +2,9 @@ pub mod accounts {
     pub const FILENAME: &str = "accounts.ts";
     pub const CODER_TYPE: &str = "AccountsCoder";
     pub const CONTENT: &str = r#"// @ts-nocheck
-import * as B from "@native-to-anchor/buffer-layout";
-import { AccountsCoder, Idl } from "@project-serum/anchor";
-import { IdlTypeDef } from "@project-serum/anchor/dist/cjs/idl";
+import * as B from "@native-to-trezoaanchor/buffer-layout";
+import { AccountsCoder, Idl } from "@trezoa-serum/trezoaanchor";
+import { IdlTypeDef } from "@trezoa-serum/trezoaanchor/dist/cjs/idl";
 
 export class <ProgramName>AccountsCoder<A extends string = string>
   implements AccountsCoder
@@ -63,8 +63,8 @@ export class <ProgramName>AccountsCoder<A extends string = string>
 pub mod events {
     pub const FILENAME: &str = "events.ts";
     pub const CODER_TYPE: &str = "EventsCoder";
-    pub const CONTENT: &str = r#"import { Idl, Event, EventCoder } from "@project-serum/anchor";
-import { IdlEvent } from "@project-serum/anchor/dist/cjs/idl";
+    pub const CONTENT: &str = r#"import { Idl, Event, EventCoder } from "@trezoa-serum/trezoaanchor";
+import { IdlEvent } from "@trezoa-serum/trezoaanchor/dist/cjs/idl";
 
 export class <ProgramName>EventsCoder implements EventCoder {
   constructor(_idl: Idl) {}
@@ -80,7 +80,7 @@ export class <ProgramName>EventsCoder implements EventCoder {
 pub mod index {
     pub const FILENAME: &str = "index.ts";
     pub const CODER_TYPE: &str = "Coder";
-    pub const CONTENT: &str = r#"import { Idl, Coder } from "@project-serum/anchor"
+    pub const CONTENT: &str = r#"import { Idl, Coder } from "@trezoa-serum/trezoaanchor"
 
 import { <ProgramName>AccountsCoder } from "./accounts";
 import { <ProgramName>EventsCoder } from "./events";
@@ -113,8 +113,8 @@ pub mod instructions {
     pub const FILENAME: &str = "instructions.ts";
     pub const CODER_TYPE: &str = "InstructionCoder";
     pub const CONTENT: &str = r#"// @ts-nocheck
-import * as B from "@native-to-anchor/buffer-layout";
-import { Idl, InstructionCoder } from "@project-serum/anchor";
+import * as B from "@native-to-trezoaanchor/buffer-layout";
+import { Idl, InstructionCoder } from "@trezoa-serum/trezoaanchor";
 
 export class <ProgramName>InstructionCoder implements InstructionCoder {
   constructor(_idl: Idl) {}
@@ -149,7 +149,7 @@ function encodeData(ix: any, span: number): Buffer {
 pub mod state {
     pub const FILENAME: &str = "state.ts";
     pub const CODER_TYPE: &str = "StateCoder";
-    pub const CONTENT: &str = r#"import { Idl, StateCoder } from "@project-serum/anchor";
+    pub const CONTENT: &str = r#"import { Idl, StateCoder } from "@trezoa-serum/trezoaanchor";
 
 export class <ProgramName>StateCoder implements StateCoder {
   constructor(_idl: Idl) {}
@@ -166,7 +166,7 @@ export class <ProgramName>StateCoder implements StateCoder {
 pub mod types {
     pub const FILENAME: &str = "types.ts";
     pub const CODER_TYPE: &str = "TypesCoder";
-    pub const CONTENT: &str = r#"import { Idl, TypesCoder } from "@project-serum/anchor";
+    pub const CONTENT: &str = r#"import { Idl, TypesCoder } from "@trezoa-serum/trezoaanchor";
 
 export class <ProgramName>TypesCoder implements TypesCoder {
   constructor(_idl: Idl) {}
@@ -185,8 +185,8 @@ pub mod src {
     pub const INDEX_CONTENT: &str = r#"export * from "./program""#;
 
     pub const PROGRAM_FILENAME: &str = "program.ts";
-    pub const PROGRAM_CONTENT: &str = r#"import { PublicKey } from "@solana/web3.js";
-import { Program, AnchorProvider } from "@project-serum/anchor";
+    pub const PROGRAM_CONTENT: &str = r#"import { PublicKey } from "@trezoa/web3.js";
+import { Program, TrezoaAnchorProvider } from "@trezoa-serum/trezoaanchor";
 
 import { <ProgramName>Coder } from "./coder";
 
@@ -194,7 +194,7 @@ import { <ProgramName>Coder } from "./coder";
 
 interface GetProgramParams {
   programId?: PublicKey;
-  provider?: AnchorProvider;
+  provider?: TrezoaAnchorProvider;
 }
 
 export function <ProgramNameCamel>Program(
@@ -245,8 +245,8 @@ pub mod package {
     "watch": "tsc -p tsconfig.cjs.json --watch"
   },
   "dependencies": {
-    "@project-serum/anchor": "=0.25.0",
-    "@native-to-anchor/buffer-layout": "=0.1.0"
+    "@trezoa-serum/trezoaanchor": "=0.25.0",
+    "@native-to-trezoaanchor/buffer-layout": "=0.1.0"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "=21.0.2",
@@ -344,14 +344,14 @@ export default {
       preventAssignment: true,
       values: {
         "process.env.NODE_ENV": JSON.stringify(env),
-        "process.env.ANCHOR_BROWSER": JSON.stringify(true),
+        "process.env.TREZOAANCHOR_BROWSER": JSON.stringify(true),
       },
     }),
     terser(),
   ],
   external: [
-    "@project-serum/borsh",
-    "@solana/web3.js",
+    "@trezoa-serum/borsh",
+    "@trezoa/web3.js",
     "assert",
     "base64-js",
     "bn.js",
@@ -465,21 +465,21 @@ export default {
     "@jridgewell/resolve-uri" "^3.0.3"
     "@jridgewell/sourcemap-codec" "^1.4.10"
 
-"@native-to-anchor/buffer-layout@=0.1.0":
+"@native-to-trezoaanchor/buffer-layout@=0.1.0":
   version "0.1.0"
-  resolved "https://registry.yarnpkg.com/@native-to-anchor/buffer-layout/-/buffer-layout-0.1.0.tgz#ff0cb66341bc820b8ee73bb1d1d43bae7e3554b0"
+  resolved "https://registry.yarnpkg.com/@native-to-trezoaanchor/buffer-layout/-/buffer-layout-0.1.0.tgz#ff0cb66341bc820b8ee73bb1d1d43bae7e3554b0"
   integrity sha512-7Ykz9KRAm53XqHj5blDUKPX+OXAPO4GZBW4zJhfHGIAbzmqsUFh9kMqR66Bak3mp6wyv1OVTwSr8ZGHKswPxDg==
   dependencies:
-    "@solana/buffer-layout" "=4.0.0"
-    "@solana/buffer-layout-utils" "=0.2.0"
+    "@trezoa/buffer-layout" "=4.0.0"
+    "@trezoa/buffer-layout-utils" "=0.2.0"
 
-"@project-serum/anchor@=0.25.0":
+"@trezoa-serum/trezoaanchor@=0.25.0":
   version "0.25.0"
-  resolved "https://registry.yarnpkg.com/@project-serum/anchor/-/anchor-0.25.0.tgz#88ee4843336005cf5a64c80636ce626f0996f503"
+  resolved "https://registry.yarnpkg.com/@trezoa-serum/trezoaanchor/-/trezoaanchor-0.25.0.tgz#88ee4843336005cf5a64c80636ce626f0996f503"
   integrity sha512-E6A5Y/ijqpfMJ5psJvbw0kVTzLZFUcOFgs6eSM2M2iWE1lVRF18T6hWZVNl6zqZsoz98jgnNHtVGJMs+ds9A7A==
   dependencies:
-    "@project-serum/borsh" "^0.2.5"
-    "@solana/web3.js" "^1.36.0"
+    "@trezoa-serum/borsh" "^0.2.5"
+    "@trezoa/web3.js" "^1.36.0"
     base64-js "^1.5.1"
     bn.js "^5.1.2"
     bs58 "^4.0.1"
@@ -494,9 +494,9 @@ export default {
     superstruct "^0.15.4"
     toml "^3.0.0"
 
-"@project-serum/borsh@^0.2.5":
+"@trezoa-serum/borsh@^0.2.5":
   version "0.2.5"
-  resolved "https://registry.yarnpkg.com/@project-serum/borsh/-/borsh-0.2.5.tgz#6059287aa624ecebbfc0edd35e4c28ff987d8663"
+  resolved "https://registry.yarnpkg.com/@trezoa-serum/borsh/-/borsh-0.2.5.tgz#6059287aa624ecebbfc0edd35e4c28ff987d8663"
   integrity sha512-UmeUkUoKdQ7rhx6Leve1SssMR/Ghv8qrEiyywyxSWg7ooV7StdpPBhciiy5eB3T0qU1BXvdRNC8TdrkxK7WC5Q==
   dependencies:
     bn.js "^5.1.2"
@@ -552,31 +552,31 @@ export default {
     estree-walker "^1.0.1"
     picomatch "^2.2.2"
 
-"@solana/buffer-layout-utils@=0.2.0":
+"@trezoa/buffer-layout-utils@=0.2.0":
   version "0.2.0"
-  resolved "https://registry.yarnpkg.com/@solana/buffer-layout-utils/-/buffer-layout-utils-0.2.0.tgz#b45a6cab3293a2eb7597cceb474f229889d875ca"
+  resolved "https://registry.yarnpkg.com/@trezoa/buffer-layout-utils/-/buffer-layout-utils-0.2.0.tgz#b45a6cab3293a2eb7597cceb474f229889d875ca"
   integrity sha512-szG4sxgJGktbuZYDg2FfNmkMi0DYQoVjN2h7ta1W1hPrwzarcFLBq9UpX1UjNXsNpT9dn+chgprtWGioUAr4/g==
   dependencies:
-    "@solana/buffer-layout" "^4.0.0"
-    "@solana/web3.js" "^1.32.0"
+    "@trezoa/buffer-layout" "^4.0.0"
+    "@trezoa/web3.js" "^1.32.0"
     bigint-buffer "^1.1.5"
     bignumber.js "^9.0.1"
 
-"@solana/buffer-layout@=4.0.0", "@solana/buffer-layout@^4.0.0":
+"@trezoa/buffer-layout@=4.0.0", "@trezoa/buffer-layout@^4.0.0":
   version "4.0.0"
-  resolved "https://registry.yarnpkg.com/@solana/buffer-layout/-/buffer-layout-4.0.0.tgz#75b1b11adc487234821c81dfae3119b73a5fd734"
+  resolved "https://registry.yarnpkg.com/@trezoa/buffer-layout/-/buffer-layout-4.0.0.tgz#75b1b11adc487234821c81dfae3119b73a5fd734"
   integrity sha512-lR0EMP2HC3+Mxwd4YcnZb0smnaDw7Bl2IQWZiTevRH5ZZBZn6VRWn3/92E3qdU4SSImJkA6IDHawOHAnx/qUvQ==
   dependencies:
     buffer "~6.0.3"
 
-"@solana/web3.js@^1.32.0", "@solana/web3.js@^1.36.0":
+"@trezoa/web3.js@^1.32.0", "@trezoa/web3.js@^1.36.0":
   version "1.53.0"
-  resolved "https://registry.yarnpkg.com/@solana/web3.js/-/web3.js-1.53.0.tgz#24a6341e4026fc2b993656141361c54bec917c07"
+  resolved "https://registry.yarnpkg.com/@trezoa/web3.js/-/web3.js-1.53.0.tgz#24a6341e4026fc2b993656141361c54bec917c07"
   integrity sha512-QyQDA9U5b+AiTo1ANsj9WihWWECeLv6VRpiTE7xPe5hLYANXZYecnlLglNiEzVgRg/jLvR5DrCISXhHx/mAEJw==
   dependencies:
     "@babel/runtime" "^7.12.5"
     "@ethersproject/sha2" "^5.5.0"
-    "@solana/buffer-layout" "^4.0.0"
+    "@trezoa/buffer-layout" "^4.0.0"
     bigint-buffer "^1.1.5"
     bn.js "^5.0.0"
     borsh "^0.7.0"

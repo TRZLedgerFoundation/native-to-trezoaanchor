@@ -1,0 +1,308 @@
+import { PublicKey } from "@trezoa/web3.js";
+import { Program, TrezoaAnchorProvider } from "@trezoa-serum/trezoaanchor";
+
+import { TplNameServiceCoder } from "./coder";
+
+export const TPL_NAME_SERVICE_PROGRAM_ID = new PublicKey(
+  "namesLPneVptA9Z5rqUDD9tMTWEJwofgaYwp8cawRkX"
+);
+
+interface GetProgramParams {
+  programId?: PublicKey;
+  provider?: TrezoaAnchorProvider;
+}
+
+export function tplNameServiceProgram(
+  params?: GetProgramParams
+): Program<TplNameService> {
+  return new Program<TplNameService>(
+    IDL,
+    params?.programId ?? TPL_NAME_SERVICE_PROGRAM_ID,
+    params?.provider,
+    new TplNameServiceCoder(IDL)
+  );
+}
+
+type TplNameService = {
+  version: "0.2.0";
+  name: "tpl_name_service";
+  instructions: [
+    {
+      name: "create";
+      accounts: [
+        {
+          name: "systemProgram";
+          isMut: false;
+          isSigner: false;
+        },
+        {
+          name: "payer";
+          isMut: true;
+          isSigner: true;
+        },
+        {
+          name: "nameAccount";
+          isMut: true;
+          isSigner: false;
+        },
+        {
+          name: "nameOwner";
+          isMut: false;
+          isSigner: false;
+        }
+      ];
+      args: [
+        {
+          name: "hashedName";
+          type: "bytes";
+        },
+        {
+          name: "lamports";
+          type: "u64";
+        },
+        {
+          name: "space";
+          type: "u32";
+        }
+      ];
+    },
+    {
+      name: "update";
+      accounts: [
+        {
+          name: "nameAccount";
+          isMut: true;
+          isSigner: false;
+        },
+        {
+          name: "nameUpdateSigner";
+          isMut: false;
+          isSigner: true;
+        }
+      ];
+      args: [
+        {
+          name: "offset";
+          type: "u32";
+        },
+        {
+          name: "data";
+          type: "bytes";
+        }
+      ];
+    },
+    {
+      name: "transfer";
+      accounts: [
+        {
+          name: "nameAccount";
+          isMut: true;
+          isSigner: false;
+        },
+        {
+          name: "nameOwner";
+          isMut: false;
+          isSigner: true;
+        }
+      ];
+      args: [
+        {
+          name: "newOwner";
+          type: "publicKey";
+        }
+      ];
+    },
+    {
+      name: "delete";
+      accounts: [
+        {
+          name: "nameAccount";
+          isMut: true;
+          isSigner: false;
+        },
+        {
+          name: "nameOwner";
+          isMut: false;
+          isSigner: true;
+        },
+        {
+          name: "refundTarget";
+          isMut: true;
+          isSigner: false;
+        }
+      ];
+      args: [];
+    }
+  ];
+  accounts: [
+    {
+      name: "nameRecordHeader";
+      type: {
+        kind: "struct";
+        fields: [
+          {
+            name: "parentName";
+            type: "publicKey";
+          },
+          {
+            name: "owner";
+            type: "publicKey";
+          },
+          {
+            name: "class";
+            type: "publicKey";
+          }
+        ];
+      };
+    }
+  ];
+  errors: [
+    {
+      code: 0;
+      name: "OutOfSpace";
+      msg: "Out of space";
+    }
+  ];
+};
+
+const IDL: TplNameService = {
+  version: "0.2.0",
+  name: "tpl_name_service",
+  instructions: [
+    {
+      name: "create",
+      accounts: [
+        {
+          name: "systemProgram",
+          isMut: false,
+          isSigner: false,
+        },
+        {
+          name: "payer",
+          isMut: true,
+          isSigner: true,
+        },
+        {
+          name: "nameAccount",
+          isMut: true,
+          isSigner: false,
+        },
+        {
+          name: "nameOwner",
+          isMut: false,
+          isSigner: false,
+        },
+      ],
+      args: [
+        {
+          name: "hashedName",
+          type: "bytes",
+        },
+        {
+          name: "lamports",
+          type: "u64",
+        },
+        {
+          name: "space",
+          type: "u32",
+        },
+      ],
+    },
+    {
+      name: "update",
+      accounts: [
+        {
+          name: "nameAccount",
+          isMut: true,
+          isSigner: false,
+        },
+        {
+          name: "nameUpdateSigner",
+          isMut: false,
+          isSigner: true,
+        },
+      ],
+      args: [
+        {
+          name: "offset",
+          type: "u32",
+        },
+        {
+          name: "data",
+          type: "bytes",
+        },
+      ],
+    },
+    {
+      name: "transfer",
+      accounts: [
+        {
+          name: "nameAccount",
+          isMut: true,
+          isSigner: false,
+        },
+        {
+          name: "nameOwner",
+          isMut: false,
+          isSigner: true,
+        },
+      ],
+      args: [
+        {
+          name: "newOwner",
+          type: "publicKey",
+        },
+      ],
+    },
+    {
+      name: "delete",
+      accounts: [
+        {
+          name: "nameAccount",
+          isMut: true,
+          isSigner: false,
+        },
+        {
+          name: "nameOwner",
+          isMut: false,
+          isSigner: true,
+        },
+        {
+          name: "refundTarget",
+          isMut: true,
+          isSigner: false,
+        },
+      ],
+      args: [],
+    },
+  ],
+  accounts: [
+    {
+      name: "nameRecordHeader",
+      type: {
+        kind: "struct",
+        fields: [
+          {
+            name: "parentName",
+            type: "publicKey",
+          },
+          {
+            name: "owner",
+            type: "publicKey",
+          },
+          {
+            name: "class",
+            type: "publicKey",
+          },
+        ],
+      },
+    },
+  ],
+  errors: [
+    {
+      code: 0,
+      name: "OutOfSpace",
+      msg: "Out of space",
+    },
+  ],
+};

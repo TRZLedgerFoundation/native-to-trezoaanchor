@@ -9,7 +9,7 @@ import {
   seq,
   Structure,
   u8,
-} from "@solana/buffer-layout";
+} from "@trezoa/buffer-layout";
 
 export {
   blob,
@@ -25,8 +25,8 @@ export {
   u32,
   u8,
   union,
-} from "@solana/buffer-layout";
-export { bool, decimal, publicKey } from "@solana/buffer-layout-utils";
+} from "@trezoa/buffer-layout";
+export { bool, decimal, publicKey } from "@trezoa/buffer-layout-utils";
 
 export function u64(property?: string): Layout<BN> {
   return new BNLayout(8, false, property);

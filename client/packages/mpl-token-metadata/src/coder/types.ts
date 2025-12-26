@@ -1,4 +1,4 @@
-import { Idl, TypesCoder } from "@project-serum/anchor";
+import { Idl, TypesCoder } from "@trezoa-serum/trezoaanchor";
 
 export class MplTokenMetadataTypesCoder implements TypesCoder {
   constructor(_idl: Idl) {}

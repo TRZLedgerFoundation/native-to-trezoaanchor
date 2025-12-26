@@ -1,5 +1,5 @@
 use borsh::{BorshDeserialize, BorshSerialize};
-use solana_program::{
+use trezoa_program::{
     instruction::{AccountMeta, Instruction},
     pubkey::Pubkey,
 };

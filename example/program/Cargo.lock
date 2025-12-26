@@ -614,7 +614,7 @@ name = "nta-example"
 version = "0.1.0"
 dependencies = [
  "borsh",
- "solana-program",
+ "trezoa-program",
  "thiserror",
 ]
 
@@ -947,7 +947,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "2fd0db749597d91ff862fd1d55ea87f7855a744a8425a64695b6fca237d1dad1"
 
 [[package]]
-name = "solana-frozen-abi"
+name = "trezoa-frozen-abi"
 version = "1.11.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "853bb08e658cfef8a2cab32459539b238fbaac9d5f34a916867f51467092e12e"
@@ -975,13 +975,13 @@ dependencies = [
  "serde_derive",
  "serde_json",
  "sha2 0.10.2",
- "solana-frozen-abi-macro",
+ "trezoa-frozen-abi-macro",
  "subtle",
  "thiserror",
 ]
 
 [[package]]
-name = "solana-frozen-abi-macro"
+name = "trezoa-frozen-abi-macro"
 version = "1.11.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "bbdc3ca4b60d9b9ec0474f745a8a0e8317440f148dc4910c8b045d86ad83f0ed"
@@ -993,7 +993,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "solana-program"
+name = "trezoa-program"
 version = "1.11.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "cbc3839dd967928f16f138d42f718212e99d15fc15b26ebef104277d9809775e"
@@ -1032,9 +1032,9 @@ dependencies = [
  "serde_json",
  "sha2 0.10.2",
  "sha3",
- "solana-frozen-abi",
- "solana-frozen-abi-macro",
- "solana-sdk-macro",
+ "trezoa-frozen-abi",
+ "trezoa-frozen-abi-macro",
+ "trezoa-sdk-macro",
  "thiserror",
  "tiny-bip39",
  "wasm-bindgen",
@@ -1042,7 +1042,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "solana-sdk-macro"
+name = "trezoa-sdk-macro"
 version = "1.11.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "a39cae167a571797569bbc9c679412591f7a0a091a1ac1b636b5f16a4b3d1ad0"

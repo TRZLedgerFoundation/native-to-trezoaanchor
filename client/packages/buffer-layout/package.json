@@ -1,18 +1,18 @@
 {
-  "name": "@native-to-anchor/buffer-layout",
-  "description": "Buffer layout utilities for Solana programs.",
+  "name": "@native-to-trezoaanchor/buffer-layout",
+  "description": "Buffer layout utilities for Trezoa programs.",
   "version": "0.1.0",
   "author": "acheron acheroncrypto@gmail.com",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/acheroncrypto/native-to-anchor.git",
+    "url": "git+https://github.com/acheroncrypto/native-to-trezoaanchor.git",
     "directory": "client/packages/buffer-layout"
   },
   "keywords": [
     "buffer layout",
-    "solana",
-    "anchor",
+    "trezoa",
+    "trezoaanchor",
     "borsh"
   ],
   "files": [
@@ -31,8 +31,8 @@
     "watch": "tsc -p tsconfig.cjs.json --watch"
   },
   "dependencies": {
-    "@solana/buffer-layout": "=4.0.0",
-    "@solana/buffer-layout-utils": "=0.2.0"
+    "@trezoa/buffer-layout": "=4.0.0",
+    "@trezoa/buffer-layout-utils": "=0.2.0"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "=21.0.2",

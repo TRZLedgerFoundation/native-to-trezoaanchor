@@ -1,7 +1,7 @@
 // @ts-nocheck
-import * as B from "@native-to-anchor/buffer-layout";
-import { AccountsCoder, Idl } from "@project-serum/anchor";
-import { IdlTypeDef } from "@project-serum/anchor/dist/cjs/idl";
+import * as B from "@native-to-trezoaanchor/buffer-layout";
+import { AccountsCoder, Idl } from "@trezoa-serum/trezoaanchor";
+import { IdlTypeDef } from "@trezoa-serum/trezoaanchor/dist/cjs/idl";
 
 export class MplTokenMetadataAccountsCoder<A extends string = string>
   implements AccountsCoder

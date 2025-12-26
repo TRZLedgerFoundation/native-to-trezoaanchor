@@ -1,12 +1,12 @@
 {
-  "name": "@native-to-anchor/solend-program",
+  "name": "@native-to-trezoaanchor/solend-program",
   "description": "Solend Program",
   "version": "0.1.0",
   "author": "Solend Maintainers <maintainers@solend.fi>",
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/solendprotocol/solana-program-library.git"
+    "url": "https://github.com/solendprotocol/trezoa-program-library.git"
   },
   "files": [
     "dist"
@@ -27,8 +27,8 @@
     "watch": "tsc -p tsconfig.cjs.json --watch"
   },
   "dependencies": {
-    "@project-serum/anchor": "=0.25.0",
-    "@native-to-anchor/buffer-layout": "=0.1.0"
+    "@trezoa-serum/trezoaanchor": "=0.25.0",
+    "@native-to-trezoaanchor/buffer-layout": "=0.1.0"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "=21.0.2",

@@ -1,4 +1,4 @@
-use solana_program::program_error::ProgramError;
+use trezoa_program::program_error::ProgramError;
 use thiserror::Error;
 
 #[derive(Error, Debug, Copy, Clone)]

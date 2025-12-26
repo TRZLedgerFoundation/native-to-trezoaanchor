@@ -1,5 +1,5 @@
 {
-  "name": "@native-to-anchor/monorepo",
+  "name": "@native-to-trezoaanchor/monorepo",
   "private": true,
   "workspaces": [
     "packages/*",

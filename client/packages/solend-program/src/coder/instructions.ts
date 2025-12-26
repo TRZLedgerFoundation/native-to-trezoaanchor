@@ -1,6 +1,6 @@
 // @ts-nocheck
-import * as B from "@native-to-anchor/buffer-layout";
-import { Idl, InstructionCoder } from "@project-serum/anchor";
+import * as B from "@native-to-trezoaanchor/buffer-layout";
+import { Idl, InstructionCoder } from "@trezoa-serum/trezoaanchor";
 
 export class SolendProgramInstructionCoder implements InstructionCoder {
   constructor(_idl: Idl) {}

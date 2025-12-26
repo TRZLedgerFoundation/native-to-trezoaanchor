@@ -1,5 +1,5 @@
-import { PublicKey } from "@solana/web3.js";
-import { Program, AnchorProvider } from "@project-serum/anchor";
+import { PublicKey } from "@trezoa/web3.js";
+import { Program, TrezoaAnchorProvider } from "@trezoa-serum/trezoaanchor";
 
 import { MplTokenMetadataCoder } from "./coder";
 
@@ -9,7 +9,7 @@ export const MPL_TOKEN_METADATA_PROGRAM_ID = new PublicKey(
 
 interface GetProgramParams {
   programId?: PublicKey;
-  provider?: AnchorProvider;
+  provider?: TrezoaAnchorProvider;
 }
 
 export function mplTokenMetadataProgram(
@@ -972,7 +972,7 @@ type MplTokenMetadata = {
           isSigner: false;
         },
         {
-          name: "splAssociatedTokenAccount";
+          name: "tplAssociatedTokenAccount";
           isMut: false;
           isSigner: false;
         },
@@ -3732,7 +3732,7 @@ const IDL: MplTokenMetadata = {
           isSigner: false,
         },
         {
-          name: "splAssociatedTokenAccount",
+          name: "tplAssociatedTokenAccount",
           isMut: false,
           isSigner: false,
         },

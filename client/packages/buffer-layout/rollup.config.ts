@@ -27,14 +27,14 @@ import nodeResolve from "@rollup/plugin-node-resolve";
           preventAssignment: true,
           values: {
             "process.env.NODE_ENV": JSON.stringify(env),
-            "process.env.ANCHOR_BROWSER": JSON.stringify(true),
+            "process.env.TREZOAANCHOR_BROWSER": JSON.stringify(true),
           },
         }),
         terser(),
       ],
       external: [
-        "@project-serum/borsh",
-        "@solana/web3.js",
+        "@trezoa-serum/borsh",
+        "@trezoa/web3.js",
         "assert",
         "base64-js",
         "bn.js",
