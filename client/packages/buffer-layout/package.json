@@ -2,7 +2,7 @@
   "name": "@native-to-trezoaanchor/buffer-layout",
   "description": "Buffer layout utilities for Trezoa programs.",
   "version": "0.1.0",
-  "author": "acheron acheroncrypto@gmail.com",
+  "author": "Trezoa Team",
   "license": "MIT",
   "repository": {
     "type": "git",

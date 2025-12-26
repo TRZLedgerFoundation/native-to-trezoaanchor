@@ -2,7 +2,7 @@
 name = "native-to-trezoaanchor"
 description = "Generate TrezoaAnchor IDLs and clients from native Trezoa programs"
 version = "0.1.0"
-authors = ["acheron <acheroncrypto@gmail.com>"]
+authors = ["Trezoa Team"]
 repository = "https://github.com/TRZLedgerFoundation/native-to-trezoaanchor"
 documentation = "https://github.com/TRZLedgerFoundation/native-to-trezoaanchor/blob/master/README.md"
 license = "MIT"
